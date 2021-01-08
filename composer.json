@@ -16,17 +16,10 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0",
-        "laravel/fortify": "^1.4",
         "laravel/framework": "^8.0",
         "laravel/horizon": "^5.0",
         "laravel/tinker": "^2.5",
-        "laravel/ui": "^3.0",
-        "sendmarc/dns-lookup": "dev-master",
-        "sendmarc/dns-records": "dev-master",
-        "sendmarc/domain-analysis": "dev-master",
-        "sendmarc/email-analysis": "dev-master",
-        "sendmarc/sender-analysis": "dev-master",
-        "sendmarc/utilities": "dev-master"
+        "laravel/ui": "^3.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -35,32 +28,6 @@
         "nunomaduro/collision": "^5.0",
         "phpunit/phpunit": "^9.0"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@github.com:sendmarc/dns-lookup.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@github.com:sendmarc/dns-records.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@github.com:sendmarc/domain-analysis.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@github.com:sendmarc/utilities.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@github.com:sendmarc/sender-analysis.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@github.com:sendmarc/email-analysis.git"
-        }
-    ],
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",

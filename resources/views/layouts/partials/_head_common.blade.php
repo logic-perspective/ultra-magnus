@@ -7,5 +7,5 @@
 <meta name="robots" content="none">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<link rel="icon" type="image/png" href="{{ secure_asset('img/favicon.png') }}">
+<link class="text-warning" rel="icon" type="image/png" href="{{ asset('img/favicon.svg') }}">
 <link href="{{ mix('css/app.css') }}" rel="stylesheet">

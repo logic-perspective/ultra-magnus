@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 import {createStore} from 'vuex-extensions';
 import createPersistedState from "vuex-persistedstate";
 import DashboardStore from './dashboard';
+import HeatmapStore from './heatmap';
 import Mixins from '../feature/mixins/store';
 
 Vue.use(Vuex);
@@ -14,5 +15,6 @@ const store = createStore(Vuex.Store, {
 });
 
 store.registerModule('dashboard-store', DashboardStore);
+store.registerModule('heatmap-store', HeatmapStore);
 
 export default store;

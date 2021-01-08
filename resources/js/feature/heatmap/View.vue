@@ -42,6 +42,11 @@
 
         mounted() {
             this.setReloadDashboard(true);
+
+            if (this.reloadHeatmap) {
+                this.setReloadHeatmap(false);
+                window.location.reload();
+            }
         }
     }
 </script>

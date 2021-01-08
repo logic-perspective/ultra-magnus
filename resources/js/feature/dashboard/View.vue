@@ -50,6 +50,8 @@
         components: {CrimeCategoryReport, CrimeAnalysisPlot, CrimeRankedListing},
 
         mounted() {
+            this.setReloadHeatmap(true);
+
             if (this.reloadDashboard) {
                 this.setReloadDashboard(false);
                 window.location.reload();

@@ -34,7 +34,7 @@
 <!-- Library for adding dinamically elements -->
 <script src="js/plugins/arrive.min.js"></script>
 <!--  Google Maps Plugin    -->
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfcs46jm2KfO8xvTP_RqtY0a39D7770s0"></script>
 <!-- Chartist JS -->
 <script src="js/plugins/chartist.min.js"></script>
 <!--  Notifications Plugin    -->
@@ -42,14 +42,36 @@
 <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
-<script src="demo/demo.js"></script>
+<script src="js/demo/demo.js"></script>
 
 <script>
+    let gmapsLoaded = false;
     $(document).ready(function() {
+
         // Javascript method's body can be found in assets/js/demos.js
         md.initDashboardPageCharts();
 
         md.initVectorMap();
+        try {
+            // Javascript method's body can be found in assets/js/demos.js
+            demo.initGoogleMaps();
+            gmapsLoaded = true;
+        }catch{}
+    });
 
+    $( window ).scroll(function() {
+        // display scrolling to infinity
+        // document.getElementById('ps__rail-x').style.display = 'none';
+        // document.getElementById('ps__rail-y').style.display = 'none';
+        if (! gmapsLoaded) {
+            $('.ps__rail-x').hide();
+            $('.ps__rail-y').hide();
+        } else {
+            window.setTimeout(() => {
+                $('.ps__rail-x').hide();
+                $('.ps__rail-y').hide();
+            }, 0);
+        }
+        console.log('scolling')
     });
 </script>

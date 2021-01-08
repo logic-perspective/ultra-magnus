@@ -2315,6 +2315,8 @@ __webpack_require__.r(__webpack_exports__);
     CrimeRankedListing: _Rank__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   mounted: function mounted() {
+    this.setReloadHeatmap(true);
+
     if (this.reloadDashboard) {
       this.setReloadDashboard(false);
       window.location.reload();
@@ -2375,6 +2377,11 @@ __webpack_require__.r(__webpack_exports__);
   name: "heatmap-view",
   mounted: function mounted() {
     this.setReloadDashboard(true);
+
+    if (this.reloadHeatmap) {
+      this.setReloadHeatmap(false);
+      window.location.reload();
+    }
   }
 });
 
@@ -97852,6 +97859,34 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
+/***/ "./resources/js/feature/mixins/store/heatmap.js":
+/*!******************************************************!*\
+  !*** ./resources/js/feature/mixins/store/heatmap.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])({
+    reloadHeatmap: 'heatmap-store/getReload'
+  })),
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])({
+    setReloadHeatmap: 'heatmap-store/setReload'
+  }))
+});
+
+/***/ }),
+
 /***/ "./resources/js/feature/mixins/store/index.js":
 /*!****************************************************!*\
   !*** ./resources/js/feature/mixins/store/index.js ***!
@@ -97862,8 +97897,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dashboard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dashboard */ "./resources/js/feature/mixins/store/dashboard.js");
+/* harmony import */ var _heatmap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./heatmap */ "./resources/js/feature/mixins/store/heatmap.js");
 
-/* harmony default export */ __webpack_exports__["default"] = ([_dashboard__WEBPACK_IMPORTED_MODULE_0__["default"]]);
+
+/* harmony default export */ __webpack_exports__["default"] = ([_dashboard__WEBPACK_IMPORTED_MODULE_0__["default"], _heatmap__WEBPACK_IMPORTED_MODULE_1__["default"]]);
 
 /***/ }),
 
@@ -97946,6 +97983,46 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/store/heatmap.js":
+/*!***************************************!*\
+  !*** ./resources/js/store/heatmap.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  namespaced: true,
+  state: function state() {
+    return {
+      reload: false
+    };
+  },
+  actions: {
+    setReload: function setReload(_ref, bool) {
+      var commit = _ref.commit;
+      commit({
+        type: 'setReload',
+        value: bool
+      });
+    }
+  },
+  mutations: {
+    setReload: function setReload(state, _ref2) {
+      var value = _ref2.value;
+      state.reload = value;
+    }
+  },
+  getters: {
+    getReload: function getReload(state) {
+      return state.reload;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/js/store/index.js":
 /*!*************************************!*\
   !*** ./resources/js/store/index.js ***!
@@ -97962,7 +98039,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex_extensions__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vuex_extensions__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var vuex_persistedstate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuex-persistedstate */ "./node_modules/vuex-persistedstate/dist/vuex-persistedstate.es.js");
 /* harmony import */ var _dashboard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dashboard */ "./resources/js/store/dashboard.js");
-/* harmony import */ var _feature_mixins_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../feature/mixins/store */ "./resources/js/feature/mixins/store/index.js");
+/* harmony import */ var _heatmap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./heatmap */ "./resources/js/store/heatmap.js");
+/* harmony import */ var _feature_mixins_store__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../feature/mixins/store */ "./resources/js/feature/mixins/store/index.js");
+
 
 
 
@@ -97970,7 +98049,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
-_feature_mixins_store__WEBPACK_IMPORTED_MODULE_5__["default"].forEach(function (mixin) {
+_feature_mixins_store__WEBPACK_IMPORTED_MODULE_6__["default"].forEach(function (mixin) {
   return vue__WEBPACK_IMPORTED_MODULE_0___default.a.mixin(mixin);
 });
 var store = Object(vuex_extensions__WEBPACK_IMPORTED_MODULE_2__["createStore"])(vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store, {
@@ -97978,6 +98057,7 @@ var store = Object(vuex_extensions__WEBPACK_IMPORTED_MODULE_2__["createStore"])(
   plugins: [Object(vuex_persistedstate__WEBPACK_IMPORTED_MODULE_3__["default"])()]
 });
 store.registerModule('dashboard-store', _dashboard__WEBPACK_IMPORTED_MODULE_4__["default"]);
+store.registerModule('heatmap-store', _heatmap__WEBPACK_IMPORTED_MODULE_5__["default"]);
 /* harmony default export */ __webpack_exports__["default"] = (store);
 
 /***/ }),
