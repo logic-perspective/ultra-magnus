@@ -1,0 +1,7 @@
+@mixin type-colours() {
+    @each $name, $colour in $colours {
+        .text-#{$name} {
+            color: $colour;
+        }
+    }
+}

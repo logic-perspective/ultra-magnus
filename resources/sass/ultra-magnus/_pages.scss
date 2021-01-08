@@ -1,0 +1,22 @@
+.login-page {
+    .card-login {
+        .card-body {
+            padding: 0 20px;
+
+            .input-group {
+                .form-group {
+                    width: 85%;
+
+                    .bmd-help {
+                        display: block;
+                        line-height: 1.5em;
+                    }
+                }
+
+                .input-group-text {
+                    padding: 15px 15px 0 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.text-clipboard {
+    display: inline-block;
+
+    &.text-clipboard-hover {
+        .btn {
+            visibility: hidden;
+        }
+
+        &:hover {
+            .btn {
+                visibility: visible;
+            }
+        }
+    }
+
+    .btn {
+        float: right;
+        margin: -2px 5px 0;
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+    }
+}

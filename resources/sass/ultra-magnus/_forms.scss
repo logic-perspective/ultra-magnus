@@ -1,0 +1,56 @@
+form .form-group,
+.card .card-body .form-group {
+    .label-checkbox {
+        &.label-checkbox-inline {
+            margin-right: 25px;
+        }
+    }
+}
+
+.form-group {
+    &.togglebutton {
+        .togglebutton-label {
+            display: inline-block;
+            margin-top: 14px;
+        }
+    }
+
+    .input-group {
+        .form-control + .input-group-btn {
+            margin-top: -7px;
+        }
+    }
+
+    .form-control.bootstrap-select {
+        margin-top: 3px;
+    }
+
+    .bmd-label-static {
+        top: -15px !important;
+    }
+}
+
+.form-group-select {
+    .bmd-label-static {
+        display: block;
+        margin-top: 16px;
+        margin-bottom: -5px;
+    }
+
+    small, .small {
+        display: block;
+    }
+}
+
+.form-control-operation {
+    float: right;
+    margin-top: -32px;
+
+    .btn {
+        padding: 0 6px;
+    }
+}
+
+label:not(.form-check-label) {
+    color: $brand-dark-grey;
+}

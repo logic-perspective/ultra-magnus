@@ -1,0 +1,149 @@
+.card {
+    &.card-full-height {
+        height: 100%;
+    }
+
+    & [class*=bg-light] {
+        color: $gray-dark;
+
+        .card-title {
+            color: $black-color;
+        }
+    }
+
+    &.card-listing {
+        .card-header {
+            &.card-header-icon,
+            &.card-header-text {
+                text-align: right;
+            }
+
+            .card-icon + .card-title,
+            .card-icon + .card-category {
+                padding-top: 10px;
+                text-align: left;
+            }
+
+            &.card-header-icon .card-title,
+            &.card-header-text .card-title,
+            &.card-header-icon .card-category,
+            &.card-header-text .card-category {
+                margin: 0;
+            }
+
+            .card-category {
+                margin-top: 0;
+                margin-bottom: 0;
+
+                &.card-operations {
+                    margin-top: 7px;
+                    margin-right: -4px;
+
+                    .btn i {
+                        position: absolute;
+                        top: 0;
+                        margin-top: 0;
+                        width: 100%;
+                        height: 100%;
+                        line-height: 41px;
+                    }
+
+                    ul.dropdown-menu li:not([class*="selected"]) a[role="option"]:not(:hover) {
+                        color: $black-color;
+                    }
+                }
+
+                &:not([class*="text-"]) {
+                    color: $gray-color;
+                    font-size: $font-paragraph;
+                }
+            }
+
+            & + .card-footer {
+                border-top: 1px solid #eee;
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .card-header {
+        &.card-header-toolbar {
+            display: flex;
+            -webkit-box-align: start;
+            align-items: flex-start;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            margin-top: 0 !important;
+            padding: 0 !important;
+
+            .card-title {
+                margin-top: 15px;
+                color: #3c4858;
+            }
+
+            .card-toolbar {
+                display: flex;
+                margin-top: 15px;
+
+                .btn {
+                    margin: 0;
+                    padding: 3px 5px;
+                }
+            }
+        }
+
+        .card-title {
+            float: left;
+
+            .badge {
+                vertical-align: middle;
+                margin-top: -2px;
+                margin-left: 20px;
+                text-transform: none;
+            }
+        }
+    }
+
+    .card-body {
+        .title {
+            margin-top: 15px;
+            min-height: auto;
+        }
+
+        .form-group {
+            margin: 20px 0 0;
+        }
+    }
+
+    .table {
+        &.table-key-value tr:first-child {
+            td, th {
+                border-top: none;
+            }
+        }
+    }
+
+    @include coloured-card('navy', $brand-light-navy, $brand-dark-navy);
+    @include coloured-card('grey', #989ca0, $brand-dark-grey);
+    @include coloured-card('cyan', $brand-dark-cyan, $brand-light-teal);
+    @include coloured-card('teal', $brand-light-teal, $brand-dark-teal);
+    @include coloured-card('red', $brand-red, $brand-dark-red);
+    @include coloured-card('crimson', $brand-crimson, $brand-dark-crimson);
+    @include coloured-card('rose', $brand-light-rose, $brand-dark-rose);
+    @include coloured-card('pink', $brand-light-pink, $brand-dark-pink);
+    @include coloured-card('purple', $brand-light-purple, $brand-dark-purple);
+    @include coloured-card('flirt', $brand-dark-rose, $brand-flirt);
+    @include coloured-card('yellow', $brand-yellow, $brand-dark-yellow);
+    @include coloured-card('orange', $brand-light-orange, $brand-dark-orange);
+    @include coloured-card('blue', $brand-light-blue, $brand-dark-blue);
+    @include coloured-card('indigo', $brand-indigo, $brand-dark-indigo);
+    @include coloured-card('green', $brand-green, $brand-dark-green);
+    @include coloured-card('pale-green', $brand-pale-green, $brand-dark-pale-green);
+    @include coloured-card('lime', $brand-lime, $brand-dark-lime);
+    @include coloured-card('selective-yellow', $brand-selective-yellow, $brand-selective-yellow);
+    @include coloured-card('salsa', $brand-salsa, $brand-salsa);
+    @include coloured-card('ruby', $brand-ruby, $brand-ruby);
+    @include coloured-card('pewter-blue', $brand-pewter-blue, $brand-pewter-blue);
+    @include coloured-card('caribbean-green', $brand-caribbean-green, $brand-caribbean-green);
+    @include coloured-card('emerald', $brand-emerald, $brand-emerald);
+}

@@ -1,0 +1,7 @@
+.header-filter {
+    &[filter-color="navy"] {
+        &:after {
+            @include linear-gradient(rgba($brand-navy, 1), rgba($brand-dark-navy, .75));
+        }
+    }
+}

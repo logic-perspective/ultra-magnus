@@ -1,0 +1,32 @@
+.icon {
+    &.icon-round {
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+
+        &.icon-danger {
+            background: rgba(230, 70, 74, 0.4);
+            color: $brand-red;
+        }
+
+        &.icon-warning {
+            background: rgba(232, 142, 70, 0.4);
+            color: $brand-orange;
+        }
+
+        &.icon-success {
+            background: rgba(31, 171, 24, 0.4);
+            color: $brand-green;
+        }
+
+        &.icon-info {
+            background: rgba(49, 118, 145, 0.4);
+            color: $brand-blue;
+        }
+
+        i {
+            font-size: 18px;
+            margin: 10px;
+        }
+    }
+}

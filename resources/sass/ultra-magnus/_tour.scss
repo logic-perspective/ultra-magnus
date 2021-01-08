@@ -1,0 +1,25 @@
+.tour {
+    .shepherd-header {
+        padding: 0.9375rem 20px 0 !important;
+        background: #ffffff !important;
+
+        .shepherd-title {
+            flex: auto;
+            color: #999999;
+            font-size: 1.0625rem;
+            font-weight: 300;
+            line-height: 1.4em;
+        }
+    }
+
+    .shepherd-text {
+        padding: 0.9375rem 20px;
+        font-size: 0.875rem;
+    }
+}
+
+.tour-start {
+    position: fixed;
+    bottom: 25px;
+    right: 30px;
+}

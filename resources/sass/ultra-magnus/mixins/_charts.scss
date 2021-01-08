@@ -1,0 +1,32 @@
+@mixin chart-legend-colours() {
+    @each $name, $colour in $colours {
+        &.chart-legend-colour-#{$name} {
+            background: $colour;
+        }
+    }
+}
+
+@mixin chart-percentage-bars($percentage_bar_height) {
+    height: $percentage_bar_height;
+
+    .chart-percentage-bar {
+        height: $percentage_bar_height;
+        line-height: $percentage_bar_height;
+        font-size: min($percentage_bar_height * 0.8, 12px);
+    }
+
+    .chart-percentage-bar-rounder {
+        margin: -($percentage_bar_height / 5);
+        border: $percentage_bar_height / 5 solid;
+        width: $percentage_bar_height / 2;
+        height: $percentage_bar_height;
+    }
+
+    .chart-percentage-bar-rounder-left {
+        border-radius: $percentage_bar_height 0 0 $percentage_bar_height;
+    }
+
+    .chart-percentage-bar-rounder-right {
+        border-radius: 0 $percentage_bar_height $percentage_bar_height 0;
+    }
+}

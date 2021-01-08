@@ -1,0 +1,27 @@
+.noUi-tooltip {
+    display: block;
+    position: absolute;
+    border: 1px solid $brand-navy;
+    border-radius: 3px;
+    background: #fff;
+    color: $brand-black;
+    padding: 5px;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 0.825em;
+    line-height: 0.9em;
+}
+
+.noUi-horizontal .noUi-tooltip {
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    left: 50%;
+    top: 150%;
+}
+
+.noUi-vertical .noUi-tooltip {
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    top: 50%;
+    right: 120%;
+}

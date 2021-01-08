@@ -1,0 +1,16 @@
+@mixin button-colours() {
+    @each $name, $colour in $colours {
+        &.btn-#{$name} {
+            @include bmd-raised-button-variant(#ffffff, $colour, $colour);
+        }
+    }
+
+    @each $name, $colour in $colours {
+        &.btn-outline-#{$name} {
+            border-color: currentColor;
+            border-style: solid;
+            border-width: 1px;
+            @include bmd-flat-button-variant($colour, $colour, $colour, $colour);
+        }
+    }
+}

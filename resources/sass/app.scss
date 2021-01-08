@@ -1,0 +1,15 @@
+// Fonts and icons
+@import url("//fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Roboto+Mono:400,700|Material+Icons");
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css");
+
+// Material Dashboard
+@import "material-dashboard";
+
+// Plugins
+@import "~datatables.net-bs4/css/dataTables.bootstrap4.min.css";
+@import '~shepherd.js/dist/css/shepherd.css';
+@import "~tui-color-picker/dist/tui-color-picker.min.css";
+@import "../js/vendors/jasny-bootstrap-v4.0.0/css/jasny-bootstrap.min.css";
+
+// Ultra-magnus
+@import "ultra-magnus";

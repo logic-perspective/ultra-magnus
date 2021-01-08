@@ -1,0 +1,90 @@
+trigger:
+  batch: true
+  branches:
+    include:
+      - master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  phpVersion: 7.3
+
+steps:
+  - script: |
+      sudo update-alternatives --set php /usr/bin/php$(phpVersion)
+      sudo update-alternatives --set phar /usr/bin/phar$(phpVersion)
+      sudo update-alternatives --set phpdbg /usr/bin/phpdbg$(phpVersion)
+      sudo update-alternatives --set php-cgi /usr/bin/php-cgi$(phpVersion)
+      sudo update-alternatives --set phar.phar /usr/bin/phar.phar$(phpVersion)
+      sudo update-alternatives --set phpize /usr/bin/phpize$(phpVersion)
+      sudo update-alternatives --set php-config /usr/bin/php-config$(phpVersion)
+      php -version
+    displayName: 'Use PHP version $(phpVersion)'
+
+  - task: InstallSSHKey@0
+    inputs:
+      knownHostsEntry: github.com,140.82.118.3 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ==
+      sshPublicKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDPL6yOiLnNoJ/fNY1Rn78wGxhlc/yF43nsd7mFBSe1eXfe8Va8xLiCfy2Wp3xS0DGkawOdtNEgniziD5ndXnDublvXuD86I7X+KeW+HYXKSABychdQR/rfI6WbMMUx8oRRyjugnMpUjSI1KRHMzEgVBXkfZObjyJ9gRiOerZQswI/6sRdRDULeDK2PTH4NdLqBaCpqWvKSbpz3qCmkgqHJ8TrmFR2hJkmOj7rIY+beGRPfd5VETtnUawn6c2aBfh5Q6UGowMvmnUTrHy/dbqYwQpNH57U1BPneH8ig+fXhuL06LSxZWG7XLM0ilzAyx92PUTZcCWp13A/q3xgKHjJrApuWX91+0lY+v7lE3FInev+4WVbzOW6/KuXTDM2S839Fw6cC8HuQd8wO2ND/PQIV6ulPXdUGAbHhNrS6e/osvS5anPLJDNV6wDG5W4XkdeI4epxyuHoGWEAYinhXq6br3qrgObLdRbIF61UVUujeH+W4SSaFU8BYgI8FIKo5t70SR15FbtJVKD2QBGnInqo/gdiSLs4kE/QlkK15y4JkdjXFvXpOPiqbTIA4LSLOLzQZM/d3yfTkjj/lsyusFJcqRm6XJkcZ5WfamAda5B9sAZPWtkekmRuqWa59nBLipp1hVsrfcabNtxWwr8ieBxkhAcz+gVSBloAeSYcRLa39kw==
+      sshKeySecureFile: sendmarc_devops_id_rsa
+    displayName: 'Install the deploy keys'
+
+  - script: |
+      sudo apt-get update && sudo apt-get install -y php-pear
+      cd /tmp \
+      && pecl download mailparse-3.0.4 \
+      && tar -xvf mailparse-3.0.4.tgz \
+      && cd mailparse-3.0.4/ \
+      && phpize \
+      && ./configure \
+      && sed -i 's/#if\s!HAVE_MBSTRING/#ifndef MBFL_MBFILTER_H/' ./mailparse.c \
+      && make \
+      && sudo mv modules/mailparse.so $(php-config --extension-dir) \
+      && echo "extension=mailparse.so" | sudo tee /etc/php/$(phpVersion)/cli/conf.d/25-mailparse.ini \
+      && sudo phpenmod mailparse \
+      && cd .. \
+      && rm -rf mailparse-3.0.4*
+    displayName: 'Install PHP extensions'
+
+  - script: echo $(php -i | grep mailparse) && composer install --no-interaction --prefer-dist
+    displayName: 'Composer install'
+
+  - script: |
+      php -r "file_exists('.env') || copy('.env.example', '.env');"
+      php artisan key:generate
+      php artisan vendor:publish --provider="Laravel\Fortify\FortifyServiceProvider"
+    displayName: 'Initialise environment'
+
+  - script: |
+      npm install
+      npm audit fix
+      npm run prod
+    displayName: 'Generate public assets'
+
+#   - script: ./vendor/bin/phpunit --log-junit $(Build.ArtifactStagingDirectory)/phpunit-test-log.xml
+#     displayName: 'Run tests with phpunit'
+
+#   - task: PublishTestResults@2
+#     inputs:
+#       testResultsFormat: 'JUnit'
+#       testResultsFiles: '**/phpunit-test-*.xml'
+#       searchFolder: '$(Build.ArtifactStagingDirectory)'
+#       mergeTestResults: true
+#       failTaskOnFailedTests: true
+
+  - task: ArchiveFiles@2
+    displayName: 'Archive files'
+    inputs:
+      rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+      includeRootFolder: false
+      archiveType: 'zip'
+      archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+      replaceExistingArchive: true
+
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Artifacts'
+    inputs:
+      pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      artifactName: 'drop'
+      publishLocation: 'Container'
+      parallel: false

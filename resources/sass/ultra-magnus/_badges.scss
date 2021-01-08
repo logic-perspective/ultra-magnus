@@ -1,0 +1,8 @@
+.badge {
+    @include badge-colours;
+
+    &.badge-pill {
+        padding-top: 6px;
+        padding-bottom: 4px;
+    }
+}

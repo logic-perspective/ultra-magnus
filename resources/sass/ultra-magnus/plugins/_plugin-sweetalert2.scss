@@ -1,0 +1,22 @@
+.swal2-title {
+    font-size: 1.425rem;
+    font-weight: 300;
+}
+
+.swal2-icon {
+    &.swal2-info {
+        border-color: #4c8da6;
+        color: #4c8da6;
+    }
+}
+
+.swal2-html-container {
+    font-weight: 300;
+}
+
+.swal2-styled.swal2-confirm,
+.swal2-styled.swal2-cancel {
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}

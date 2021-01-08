@@ -1,0 +1,16 @@
+.bootstrap-select {
+    > .dropdown-toggle {
+        margin-top: 0;
+
+        &.bs-placeholder,
+        &.bs-placeholder:hover,
+        &.bs-placeholder:focus,
+        &.bs-placeholder:active {
+            color: #999 !important;
+        }
+
+        .filter-option-inner-inner {
+            text-overflow: ellipsis;
+        }
+    }
+}

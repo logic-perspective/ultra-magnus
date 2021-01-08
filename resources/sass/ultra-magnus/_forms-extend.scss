@@ -1,0 +1,53 @@
+form {
+    .checkbox-radios {
+        margin-top: 0;
+
+        > .form-check:first-child {
+            margin-top: 2px;
+        }
+    }
+}
+
+.card {
+    .card-body {
+        .col-form-label,
+        .label-on-right {
+            &.label-checkbox {
+                padding-top: 1px;
+            }
+        }
+    }
+}
+
+.modal {
+    .modal-body {
+        .col-form-label.bmd-label-static {
+            margin-top: 19px;
+        }
+
+        .col-form-label,
+        .label-on-right {
+            padding-top: 3px;
+            padding-right: 5px;
+            text-align: right;
+        }
+
+        .label-on-left {
+            padding-left: 15px;
+            text-align: left;
+        }
+    }
+}
+
+@media all and (max-width: 991px) {
+    .modal{
+        .modal-body{
+            .col-form-label,
+            .label-on-right{
+                padding-left: 15px;
+                padding-top: 3px;
+                text-align: left;
+            }
+        }
+    }
+}

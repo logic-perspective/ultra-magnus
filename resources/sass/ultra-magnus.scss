@@ -1,0 +1,44 @@
+@import "ultra-magnus/core";
+@import "ultra-magnus/mixins";
+
+// Components
+@import "ultra-magnus/badges";
+@import "ultra-magnus/breadcrumb";
+@import "ultra-magnus/buttons";
+@import "ultra-magnus/cards";
+@import "ultra-magnus/charts";
+@import "ultra-magnus/collapse";
+@import "ultra-magnus/footer";
+@import "ultra-magnus/forms";
+@import "ultra-magnus/forms-extend";
+@import "ultra-magnus/headers";
+@import "ultra-magnus/icons";
+@import "ultra-magnus/inbox";
+@import "ultra-magnus/lists";
+@import "ultra-magnus/maps";
+@import "ultra-magnus/modal";
+@import "ultra-magnus/navbar";
+@import "ultra-magnus/overlays";
+@import "ultra-magnus/pages";
+@import "ultra-magnus/popover";
+@import "ultra-magnus/radios";
+@import "ultra-magnus/sidebar-and-main-panel";
+@import "ultra-magnus/tables";
+@import "ultra-magnus/tabs";
+@import "ultra-magnus/tour";
+@import "ultra-magnus/type";
+
+// Cards
+@import "ultra-magnus/cards/card-stats";
+@import "ultra-magnus/cards/card-verifications";
+
+// Plugins
+@import "~sweetalert2/src/sweetalert2";
+
+@import "ultra-magnus/plugins/plugin-bootstrap-select";
+@import "ultra-magnus/plugins/plugin-clipboard";
+@import "ultra-magnus/plugins/plugin-colour-picker";
+@import "ultra-magnus/plugins/plugin-datatables";
+@import "ultra-magnus/plugins/plugin-fileupload";
+@import "ultra-magnus/plugins/plugin-nouislider";
+@import "ultra-magnus/plugins/plugin-sweetalert2";

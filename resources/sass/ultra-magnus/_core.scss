@@ -1,0 +1,9 @@
+.col-flex-row-center {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+
+    > * {
+        flex: 1 100%;
+    }
+}

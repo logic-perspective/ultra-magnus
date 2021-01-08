@@ -1,0 +1,26 @@
+.map-container {
+    &.map-sm {
+        height: 200px;
+    }
+}
+
+.map-legend {
+    > tbody > tr > td {
+        padding: 10px 8px;
+
+        &:first-child {
+            line-height: 0;
+            font-size: 0;
+        }
+    }
+
+    .map-legend-colour {
+        display: inline-block;
+        box-sizing: border-box;
+        width: 14px;
+        height: 14px;
+        border-width: 3px;
+        border-style: solid;
+        border-radius: 50%;
+    }
+}

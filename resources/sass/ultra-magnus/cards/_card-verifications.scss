@@ -1,0 +1,47 @@
+.card {
+    &.card-verification {
+        margin: 30px 0;
+        border-radius: 6px;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+
+        .card-header {
+            border-bottom: none;
+            background: none;
+            padding: 0.75rem 1.25rem;
+
+            .title {
+                float: left;
+                margin: 2px;
+
+                a {
+                    font-size: inherit;
+
+                    i {
+                        float: left;
+                        margin-top: -6px;
+                    }
+                }
+            }
+
+            .status {
+                float: left;
+                margin-right: 0.25rem;
+                margin-bottom: -8px;
+            }
+        }
+
+        .card-body {
+            padding: 0.9375rem 20px;
+
+            .btn-check {
+                float: left;
+                margin-top: -2px;
+                margin-right: 1rem;
+            }
+
+            .col-icon {
+                max-width: 30px;
+            }
+        }
+    }
+}

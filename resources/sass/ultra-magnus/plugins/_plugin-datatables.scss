@@ -1,0 +1,54 @@
+.material-datatables {
+    .custom-select {
+        text-align: center;
+        text-align-last: center;
+    }
+
+    .dataTable {
+        > thead > tr > th {
+            vertical-align: bottom;
+        }
+
+        > thead > tr > th,
+        > thead > tr > td {
+            &.sorting,
+            &.sorting_asc,
+            &.sorting_desc,
+            &.sorting_asc_disabled,
+            &.sorting_desc_disabled {
+                padding-right: 8px;
+
+                &:before,
+                &:after {
+                    content: "";
+                }
+
+                &:after {
+                    position: relative;
+                    display: inline-block;
+                    top: auto;
+                    right: auto;
+                    bottom: 2px;
+                    margin-left: 15px;
+                    color: $brand-teal;
+                    opacity: 1;
+                }
+            }
+
+            &.sorting_asc,
+            &.sorting_asc_disabled {
+                &:after {
+                    content: "\2191";
+                }
+            }
+
+            &.sorting_desc,
+            &.sorting_desc_disabled {
+                &:after {
+                    opacity: 1;
+                    content: "\2193";
+                }
+            }
+        }
+    }
+}

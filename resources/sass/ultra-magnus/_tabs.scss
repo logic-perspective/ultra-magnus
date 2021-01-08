@@ -1,0 +1,10 @@
+.nav-tabs-container {
+    width: 100%;
+
+    &.nav-tabs-rose {
+        border-radius: 3px;
+        padding: 15px;
+        background: linear-gradient(60deg, $brand-rose, $brand-dark-rose);
+        @include shadow-big-color($brand-rose);
+    }
+}

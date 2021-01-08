@@ -1,0 +1,71 @@
+.list-group {
+    &.list-group-flush {
+        &.list-group-actions {
+            li.list-group-item {
+                margin: $bmd-btn-margin-bottom 1px;
+                border: 0;
+                border-radius: $border-radius-sm;
+                background-color: $grey-100;
+
+                .drag-handle {
+                    display: inline-block;
+                    float: left;
+                    height: 25px;
+                    opacity: 0.2;
+                    cursor: -moz-grab;
+                    cursor: -webkit-grab;
+                    cursor: grab;
+                }
+
+                .drag-handle:active {
+                    cursor: -moz-grabbing;
+                    cursor: -webkit-grabbing;
+                    cursor: grabbing;
+                }
+
+                .badge.badge-round {
+                    float: left;
+                    margin-right: 15px;
+                    padding: 0;
+                    border-radius: 50%;
+                    width: 25px;
+                    height: 25px;
+                    line-height: 25px;
+                }
+
+                .li-actions {
+                    float: right;
+                    margin-top: -2px;
+                    margin-right: -10px;
+
+                    .btn {
+                        visibility: hidden;
+                        margin: 0;
+                        padding: 5px;
+                    }
+                }
+
+                &:hover {
+                    background-color: $grey-200;
+
+                    .btn {
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+
+        .list-group-item {
+            :not(.btn) > i.material-icons {
+                vertical-align: middle;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &.list-group-compact {
+        .list-group-item {
+            padding: 0.75rem 0;
+        }
+    }
+}

@@ -1,0 +1,152 @@
+.card {
+    .card-header {
+        .chart-legend {
+            margin-top: 0.75rem;
+        }
+    }
+}
+
+.chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding-inline-start: 0;
+
+    .chart-legend-item {
+        padding: 0 15px;
+        color: $brand-navy;
+        white-space: nowrap;
+
+        &:last-child {
+            padding-right: 0;
+        }
+
+        .chart-legend-colour {
+            margin-right: 5px;
+        }
+
+        .chart-legend-value {
+            margin-left: 29px;
+            color: $brand-grey;
+        }
+    }
+}
+
+.chart-legend-colour {
+    display: inline-block;
+    border-radius: 5px;
+    width: 20px;
+    height: 10px;
+
+    &.chart-legend-colour-circle {
+        width: 10px !important;
+    }
+
+    @include chart-legend-colours
+}
+
+.chart-col {
+    min-width: 0;
+}
+
+.chart-vertical {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    .chart-container {
+        &.chart-doughnut {
+            max-width: 500px;
+        }
+    }
+
+    .chart-legend {
+        margin-top: 20px;
+
+        .chart-legend-item {
+            flex: 1 0 20%;
+        }
+    }
+}
+
+.chart-percentage-bars {
+    position: relative;
+    margin: 2px;
+    width: 100%;
+
+    .chart-percentage-bar {
+        position: absolute;
+        border-left: 2px solid #fff;
+        text-align: center;
+        font-weight: bold;
+        color: rgba(255, 255, 255, 0.75);
+        overflow: hidden;
+
+        &:first-child {
+            border-left: none !important;
+        }
+    }
+
+    .chart-percentage-bar-rounder {
+        position: absolute;
+        box-sizing: content-box;
+    }
+
+    .chart-percentage-bar-rounder-left {
+        left: 0;
+        margin-right: 0 !important;
+        border-right: none !important;
+    }
+
+    .chart-percentage-bar-rounder-right {
+        right: 0;
+        margin-left: 0 !important;
+        border-left: none !important;
+    }
+
+    @include chart-percentage-bars(25px);
+
+    &.chart-percentage-bars-sm {
+        @include chart-percentage-bars(10px);
+    }
+}
+
+.chart-container {
+    position: relative;
+    flex: 1 100%;
+    min-width: 0;
+
+    &.chart-xxs {
+        height: 50px;
+    }
+
+    &.chart-xs {
+        height: 100px;
+    }
+
+    &.chart-sm {
+        height: 200px;
+    }
+
+    &.chart-min-sm {
+        min-height: 200px;
+    }
+
+    &.chart-md {
+        height: 300px;
+    }
+
+    &.chart-min-md {
+        min-height: 300px;
+    }
+
+    &.chart-lg {
+        height: 400px;
+    }
+
+    &.chart-min-lg {
+        min-height: 400px;
+    }
+}
+

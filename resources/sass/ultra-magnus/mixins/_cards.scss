@@ -1,0 +1,16 @@
+@mixin coloured-card($name, $gradient-start, $gradient-end) {
+    .card-header-#{$name} .card-icon,
+    .card-header-#{$name} .card-text,
+    .card-header-#{$name}:not(.card-header-icon):not(.card-header-text),
+    &.bg-#{$name},
+    &.card-rotate.bg-#{$name} .front,
+    &.card-rotate.bg-#{$name} .back {
+        background: linear-gradient(60deg, $gradient-start, $gradient-end);
+    }
+
+    .card-header-#{$name} .card-icon,
+    .card-header-#{$name}:not(.card-header-icon):not(.card-header-text),
+    .card-header-#{$name} .card-text {
+        @include shadow-big-color($gradient-start);
+    }
+}

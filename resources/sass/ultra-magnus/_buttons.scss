@@ -1,0 +1,36 @@
+.btn {
+    white-space: nowrap;
+
+    @include button-colours;
+
+    &.btn-no-padding {
+        padding: 0;
+    }
+
+    &.btn-favourite {
+        padding: 0 !important;
+        margin-top: -5px !important;
+        color: $brand-yellow;
+
+        &:focus, &:active {
+            color: $brand-yellow;
+        }
+
+        &:hover {
+            color: $brand-dark-yellow;
+        }
+
+        &.btn-favourited {
+            opacity: 1 !important;
+            cursor: inherit;
+
+            &:hover {
+                color: $brand-yellow;
+            }
+        }
+
+        .material-icons {
+            font-size: 24px;
+        }
+    }
+}

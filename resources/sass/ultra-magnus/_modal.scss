@@ -1,0 +1,14 @@
+.modal-dialog {
+    .modal-header {
+        .modal-toolbar {
+            @include toolbar()
+        }
+    }
+
+    .modal-footer {
+        button {
+            padding-right: 30px;
+            padding-left: 30px;
+        }
+    }
+}

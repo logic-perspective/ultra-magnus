@@ -1,0 +1,94 @@
+.sidebar {
+    .sidebar-wrapper {
+        .user {
+            &.acting-as {
+                .photo {
+                    margin-top: 7px;
+                }
+
+                .username {
+                    padding: 15px;
+                    background: $brand-warning;
+                    white-space: normal;
+
+                    > span {
+                        padding-right: 27px;
+                    }
+                }
+
+                .nav li {
+                    .sidebar-normal {
+                        white-space: normal !important;
+                        padding-left: 45px;
+                    }
+
+                    &.acting-as:not(:hover) > a {
+                        background-color: $brand-warning;
+                    }
+                }
+            }
+
+            .photo {
+                background: $brand-grey;
+
+                i.material-icons {
+                    margin: 5px 0 0 5px;
+                }
+            }
+        }
+
+        .nav {
+            .sidebar-mini i {
+                margin-top: 2px;
+            }
+        }
+    }
+
+    &[data-color="navy"] {
+        @include set-background-color-button($brand-navy);
+    }
+
+    &[data-color="teal"] {
+        @include set-background-color-button($brand-teal);
+    }
+
+    &[data-color="cyan"] {
+        @include set-background-color-button($brand-cyan);
+    }
+
+    &[data-background-color="navy"] {
+        background: $brand-navy;
+
+        .logo {
+            .logo-normal {
+                padding-top: 7px;
+                font-size: 14px;
+                letter-spacing: 1.5px;
+                color: $brand-grey !important;
+            }
+        }
+
+        @include sidebar-background-color($brand-navy, $white-color);
+
+        .nav li .dropdown-menu .dropdown-item {
+            color: $white-color;
+        }
+    }
+}
+
+.sidebar-mini {
+    .sidebar {
+        .sidebar-wrapper {
+            .user.acting-as {
+                .username {
+                    white-space: nowrap;
+                }
+
+                .nav li.acting-as .sidebar-normal {
+                    white-space: nowrap !important;
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,85 @@
+.table {
+    &.table-hover {
+        tbody tr:hover {
+            background-color: #fbfcfd;
+
+            .td-actions .btn {
+                opacity: 1;
+            }
+        }
+    }
+
+    &.table-sm {
+        > thead > tr > th {
+            padding: 6px 4px;
+            font-size: 0.875rem;
+        }
+
+        tbody tr td {
+            padding: 6px 4px;
+            font-size: 0.825rem;
+        }
+    }
+
+    > tbody {
+        > tr {
+            > td {
+                .chart-container {
+                    margin-right: auto;
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+
+    th, td {
+        &.supplementary {
+            width: 0.1%;
+            background-color: lighten($brand-light-grey, 5%);
+        }
+    }
+
+    th.supplementary {
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    td.supplementary {
+        font-size: 0.8rem;
+    }
+
+    .tr-selected {
+        > td {
+            background-color: #f5f6f7;
+
+            &.td-actions .btn {
+                opacity: 1;
+            }
+        }
+    }
+
+    .td-stretch {
+        width: 100%;
+    }
+
+    .td-shrink {
+        width: 0.1%;
+    }
+
+    .td-padder {
+        line-height: 0;
+        height: 0;
+        visibility: hidden;
+        overflow: hidden;
+    }
+
+    .td-actions {
+        text-align: right;
+        white-space: nowrap;
+        padding-left: 1rem;
+
+        .btn {
+            opacity: 0.6;
+        }
+    }
+}

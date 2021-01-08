@@ -1,0 +1,21 @@
+@include type-colours;
+
+h6 {
+    &.label {
+        margin-bottom: 0;
+        color: $black-color;
+    }
+
+    a {
+        line-height: 100%;
+    }
+
+    i.material-icons {
+        font-size: 150%;
+    }
+}
+
+.card .text-monospace,
+.table.table-sm tbody tr td .text-monospace {
+    font-size: 0.775rem;
+}

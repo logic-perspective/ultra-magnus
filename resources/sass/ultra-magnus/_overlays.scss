@@ -1,0 +1,32 @@
+.loading-overlay {
+    position: relative;
+
+    &-container,
+    &-background {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 5;
+    }
+
+    &-background {
+        background-color: #ffffff;
+        opacity: 0.7;
+    }
+
+    &-spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        z-index: 5;
+    }
+
+    .card {
+        .card-header.card-header-icon {
+            z-index: 10 !important;
+        }
+    }
+}

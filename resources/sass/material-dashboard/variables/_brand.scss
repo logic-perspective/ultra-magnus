@@ -1,0 +1,101 @@
+// Bootstrap brand color customization
+
+// Sendmarc CI primary colours
+$brand-black:      #0b0c10;
+$brand-navy:       #1f2833;
+$brand-grey:       #c5c6c7;
+$brand-cyan:       #66fcf1;
+$brand-teal:       #45a29e;
+
+// Sendmarc CI primary shades
+$brand-light-navy: #273240;
+$brand-dark-navy:  #141f2d;
+$brand-light-grey: #e2e3e4;
+$brand-dark-grey:  #787f85;
+$brand-light-cyan: #94fdf5;
+$brand-dark-cyan:  #12eede;
+$brand-light-teal: #70c4c1;
+$brand-dark-teal:  #2b8d89;
+
+// Extended Colours
+$brand-light-yellow:     #ffed3b !default;
+$brand-yellow:           #ffba08 !default;
+$brand-dark-yellow:      #cc8700 !default;
+$brand-light-orange:     #ffae6e !default;
+$brand-orange:           #e88e46 !default;
+$brand-dark-orange:      #d26e1e !default;
+$brand-light-red:        #fd6e72 !default;
+$brand-red:              #e6464a !default;
+$brand-dark-red:         #d11e23 !default;
+$brand-light-crimson:    #e45f6b !default;
+$brand-crimson:          #de3c4b !default;
+$brand-dark-crimson:     #a22c37 !default;
+$brand-light-rose:       #e082b9 !default;
+$brand-rose:             #ce5a9e !default;
+$brand-dark-rose:        #b73983 !default;
+$brand-light-pink:       #ec6189 !default;
+$brand-pink:             #e83f6f !default;
+$brand-dark-pink:        #a92e51 !default;
+$brand-light-purple:     #a863bb !default;
+$brand-purple:           #7e3f8f !default;
+$brand-dark-purple:      #572c63 !default;
+$brand-light-indigo:     #5672af !default;
+$brand-indigo:           #3a599b !default;
+$brand-dark-indigo:      #20438d !default;
+$brand-light-blue:       #4c8da6 !default;
+$brand-blue:             #317691 !default;
+$brand-dark-blue:        #19627e !default;
+$brand-light-pale-green: #77d2b5 !default;
+$brand-pale-green:       #59c9a5 !default;
+$brand-dark-pale-green:  #419379 !default;
+$brand-light-green:      #40bc39 !default;
+$brand-green:            #1fab18 !default;
+$brand-dark-green:       #10850a !default;
+$brand-light-lime:       #a7d743 !default;
+$brand-lime:             #8fc51c !default;
+$brand-dark-lime:        #6f9e0c !default;
+
+$brand-selective-yellow: #ffb800 !default;
+$brand-salsa:            #f8333c !default;
+$brand-ruby:             #a22c37 !default;
+$brand-flirt:            #a8186c !default;
+$brand-pewter-blue:      #73a9Bf !default;
+$brand-caribbean-green:  #35ce8d !default;
+$brand-emerald:          #44cf6c !default;
+
+// Brand Colours
+$brand-primary: $brand-teal !default;
+$brand-info:    $brand-light-blue !default;
+$brand-success: $brand-emerald !default;
+$brand-warning: $brand-orange !default;
+$brand-danger:  $brand-red !default;
+$brand-inverse: $brand-black !default;
+
+$colours: (
+    'black': $brand-black,
+    'navy': $brand-navy,
+    'grey': $brand-grey,
+    'dark-grey': $brand-dark-grey,
+    'cyan': $brand-cyan,
+    'teal': $brand-teal,
+    'red': $brand-red,
+    'crimson': $brand-crimson,
+    'rose': $brand-rose,
+    'pink': $brand-pink,
+    'purple': $brand-purple,
+    'yellow': $brand-yellow,
+    'orange': $brand-orange,
+    'light-blue': $brand-light-blue,
+    'blue': $brand-blue,
+    'indigo': $brand-indigo,
+    'green': $brand-green,
+    'pale-green': $brand-pale-green,
+    'lime': $brand-lime,
+    'selective-yellow': $brand-selective-yellow,
+    'salsa': $brand-salsa,
+    'ruby': $brand-ruby,
+    'flirt': $brand-flirt,
+    'pewter-blue': $brand-pewter-blue,
+    'caribbean-green': $brand-caribbean-green,
+    'emerald': $brand-emerald,
+);

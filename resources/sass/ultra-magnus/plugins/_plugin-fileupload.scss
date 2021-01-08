@@ -1,0 +1,25 @@
+.fileinput {
+    display: block;
+
+    &:not(.fileinput-exists) {
+        .fileinput-new {
+            &.img-thumbnail {
+                display: block;
+            }
+        }
+    }
+
+    &.fileinput-exists {
+        .fileinput-preview.img-thumbnail {
+            display: block;
+        }
+    }
+
+    .img-thumbnail {
+        border-radius: 5px;
+    }
+
+    .fileinput-controls {
+        text-align: right;
+    }
+}

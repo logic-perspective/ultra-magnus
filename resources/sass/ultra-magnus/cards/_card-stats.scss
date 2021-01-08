@@ -1,0 +1,13 @@
+.card-stats {
+    .card-header {
+        .card-category {
+            min-width: 220px;
+        }
+    }
+
+    .card-body {
+        &.card-body-empty {
+            padding: 15px 0 0;
+        }
+    }
+}
