@@ -7,7 +7,7 @@
                         <i class="material-icons">pan_tool</i>
                     </div>
                     <p class="card-category">Violent Crime</p>
-                    <h3 class="card-title">184</h3>
+                    <h3 class="card-title">{{ violent }}</h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats">
@@ -24,7 +24,7 @@
                         <i class="material-icons">home</i>
                     </div>
                     <p class="card-category">Property Crime</p>
-                    <h3 class="card-title">75</h3>
+                    <h3 class="card-title">{{ property }}</h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats">
@@ -40,7 +40,7 @@
                         <i class="material-icons">work</i>
                     </div>
                     <p class="card-category">Organised Crime</p>
-                    <h3 class="card-title">12</h3>
+                    <h3 class="card-title">{{ organised }}</h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats">
@@ -56,7 +56,7 @@
                         <i class="material-icons">accessibility</i>
                     </div>
                     <p class="card-category">Consensual Crime</p>
-                    <h3 class="card-title">245</h3>
+                    <h3 class="card-title">{{ consensual }}</h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats">
@@ -70,6 +70,60 @@
 
 <script>
     export default {
-        name: "crime-category-report"
+        name: "crime-category-report",
+
+        data() {
+            return {
+                consensual  : 0,
+                property    : 0,
+                organised   : 0,
+                violent     : 0,
+            }
+        },
+
+        mounted() {
+            this.loadCategoryCounts();
+        },
+
+        methods: {
+            loadCategoryCounts() {
+                this.loadViolentCounts();
+                this.loadPropertyCounts();
+                this.loadConsensualCounts();
+                this.loadOrganisedCounts();
+            },
+
+            loadViolentCounts() {
+                axios.get('chicago-crime/violent')
+                    .then(res => {
+                        this.violent = res.data;
+                    })
+                    .catch(() => {})
+            },
+
+            loadPropertyCounts() {
+                axios.get('chicago-crime/property')
+                    .then(res => {
+                        this.property = res.data;
+                    })
+                    .catch(() => {})
+            },
+
+            loadConsensualCounts() {
+                axios.get('chicago-crime/consensual')
+                    .then(res => {
+                        this.consensual = res.data;
+                    })
+                    .catch(() => {})
+            },
+
+            loadOrganisedCounts() {
+                axios.get('chicago-crime/organised')
+                    .then(res => {
+                        this.organised = res.data;
+                    })
+                    .catch(() => {})
+            },
+        }
     }
 </script>

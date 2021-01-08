@@ -30,8 +30,8 @@
             <div class="content p-0">
                 <div class="container-fluid p-0">
                     <crime-ranked-listing></crime-ranked-listing>
-                    <crime-analysis-plot></crime-analysis-plot>
                     <crime-category-report></crime-category-report>
+                    <crime-analysis-plot v-if="false"></crime-analysis-plot>
                 </div>
             </div>
         </div>

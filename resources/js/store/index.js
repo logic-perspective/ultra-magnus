@@ -4,7 +4,7 @@ import {createStore} from 'vuex-extensions';
 import createPersistedState from "vuex-persistedstate";
 import DashboardStore from './dashboard';
 import HeatmapStore from './heatmap';
-import Mixins from '../feature/mixins/store';
+import Mixins from '../mixins/store';
 
 Vue.use(Vuex);
 Mixins.forEach(mixin => Vue.mixin(mixin));
