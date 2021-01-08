@@ -1070,6 +1070,36 @@ demo = {
     marker.setMap(map);
 
 
+  },
+
+  initVectorMap: function() {
+    console.log('init myVectorMap')
+    var mapData = {
+      "US-IL": 10000,
+    };
+
+    $('#worldMap1').vectorMap({
+      map: 'us_mill',
+      backgroundColor: "transparent",
+      zoomOnScroll: false,
+      regionStyle: {
+        initial: {
+          fill: '#e4e4e4',
+          "fill-opacity": 0.9,
+          stroke: 'none',
+          "stroke-width": 0,
+          "stroke-opacity": 0
+        }
+      },
+
+      series: {
+        regions: [{
+          values: mapData,
+          scale: ["#AAAAAA", "#444444"],
+          normalizeFunction: 'polynomial'
+        }]
+      },
+    });
   }
 
 }

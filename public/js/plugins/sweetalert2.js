@@ -1266,7 +1266,7 @@
       }(this));
   }
 
-  // private global state for the queue feature
+  // private global state for the queue components
   var currentSteps = [];
   /*
    * Global function for chaining sweetAlert popups
@@ -1461,7 +1461,7 @@
    *   https://github.com/tc39/proposal-private-methods
    *   https://github.com/babel/babel/pull/7555
    * Once we have the changes from that PR in Babel, and our core class fits reasonable in *one module*
-   *   then we can use that language feature.
+   *   then we can use that language components.
    */
   var privateProps = {
     promise: new WeakMap$1(),

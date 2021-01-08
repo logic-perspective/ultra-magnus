@@ -23,7 +23,7 @@ Vue.use(BootstrapVueIcons);
 Vue.use(mediaQueries);
 Vue.use(IdleVue, idleVueOptions);
 
-Vue.component('navigation-sidebar', require('./feature/components/Sidebar').default);
+Vue.component('navigation-sidebar', require('./components/core/Sidebar').default);
 
 
 const app = new Vue({
