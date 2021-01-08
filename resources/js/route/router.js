@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Dashboard from '../feature/dashboard/View';
-import Heatmap from '../feature/heatmap/View';
+import Dashboard from '../components/dashboard/View';
+import Heatmap from '../components/heatmap/View';
 
 Vue.use(VueRouter);
 
