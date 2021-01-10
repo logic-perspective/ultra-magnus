@@ -30,8 +30,10 @@
             <div class="content p-0">
                 <div class="container-fluid p-0">
                     <crime-ranked-listing></crime-ranked-listing>
+                    <h5>Crime Reports per Category</h5>
                     <crime-category-report></crime-category-report>
-                    <crime-analysis-plot></crime-analysis-plot>
+                    <h5>Crime Reports Analysis</h5>
+                    <crime-analysis-chart></crime-analysis-chart>
                 </div>
             </div>
         </div>
@@ -41,13 +43,13 @@
 
 <script>
     import CrimeRankedListing from "./Rank";
-    import CrimeAnalysisPlot from "./Graph";
+    import CrimeAnalysisChart from "./Chart";
     import CrimeCategoryReport from "./Category";
 
     export default {
         name: "dashboard-view",
 
-        components: {CrimeCategoryReport, CrimeAnalysisPlot, CrimeRankedListing},
+        components: {CrimeCategoryReport, CrimeAnalysisChart, CrimeRankedListing},
 
         mounted() {
             this.setReloadHeatmap(true);

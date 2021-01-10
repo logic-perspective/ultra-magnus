@@ -56,4 +56,28 @@ class ChicagoController extends Controller
     {
         return response()->json($this->repository->getDistrictRates());
     }
+
+    /**
+     * @return JsonResponse
+     */
+    public function getOffences(): JsonResponse
+    {
+        return response()->json($this->repository->getOffences());
+    }
+
+    /**
+     * @return JsonResponse
+     */
+    public function getArrests(): JsonResponse
+    {
+        return response()->json($this->repository->getArrests());
+    }
+
+    /**
+     * @return JsonResponse
+     */
+    public function getDomestic(): JsonResponse
+    {
+        return response()->json($this->repository->getDomestic());
+    }
 }

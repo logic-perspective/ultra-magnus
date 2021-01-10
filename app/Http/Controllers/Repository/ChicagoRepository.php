@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Repository;
 
-use Illuminate\Support\Facades\DB;
+use App\Chicago;
 
 class ChicagoRepository
 {
@@ -65,6 +65,8 @@ class ChicagoRepository
         'HUMAN TRAFFICKING',
     ];
 
+    const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+
     /**
      * @return array
      */
@@ -106,7 +108,7 @@ class ChicagoRepository
      */
     private function getCrimeDistrictCount(int $district): int
     {
-        return DB::table('chicago_crime')->where('District', $district)->count();
+        return Chicago::where('District', $district)->count();
     }
 
     /**
@@ -115,6 +117,45 @@ class ChicagoRepository
      */
     public function getCrimeCategoryCount(array $category): int
     {
-        return DB::table('chicago_crime')->whereIn('Primary Type', $category)->count();
+        return Chicago::whereIn('Primary Type', $category)->count();
+    }
+
+    /**
+     * @return array
+     */
+    public function getOffences(): array
+    {
+        $offences = [];
+        foreach (range(1, 12) as $calenderMonth) {
+            $prefix = $calenderMonth < 10 ? '0' : '';
+            array_push($offences, Chicago::where('Date', 'LIKE', $prefix . $calenderMonth . '/%')->count());
+        }
+        return array_combine(self::months,  $offences);
+    }
+
+    /**
+     * @return array
+     */
+    public function getArrests(): array
+    {
+        $arrests = [];
+        foreach (range(1, 12) as $calenderMonth) {
+            $prefix = $calenderMonth < 10 ? '0' : '';
+            array_push($arrests, Chicago::where('Date', 'LIKE', $prefix . $calenderMonth . '/%')->where('Arrest', 'true')->count());
+        }
+        return array_combine(self::months,  $arrests);
+    }
+
+    /**
+     * @return array
+     */
+    public function getDomestic(): array
+    {
+        $domestic = [];
+        foreach (range(1, 12) as $calenderMonth) {
+            $prefix = $calenderMonth < 10 ? '0' : '';
+            array_push($domestic, Chicago::where('Date', 'LIKE', $prefix . $calenderMonth . '/%')->where('Domestic', 'true')->count());
+        }
+        return array_combine(self::months,  $domestic);
     }
 }

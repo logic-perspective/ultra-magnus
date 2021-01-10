@@ -110,7 +110,7 @@
                 regions: [{
                     values: mapData,
                     scale: ["#70c4c1", "#5672af", "#ffae6e", "#e45f6b"],
-                    normalizeFunction: 'polynomial'
+                    normalizeFunction: 'polynomial',
                 }]
             },
         });
@@ -118,7 +118,9 @@
         try {
             demo.initGoogleMaps();
             gmapsLoaded = true;
-        }catch{}
+        } catch{}
+
+        $('.ct-label .ct-vertical .ct-start').hide();
     });
 
     $( window ).scroll(function() {

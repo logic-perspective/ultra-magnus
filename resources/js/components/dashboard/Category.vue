@@ -28,7 +28,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="stats">
-                        <i class="material-icons">local_offer</i> The is a decrease in property crimes.
+                        <i class="material-icons">local_offer</i>  Updated August 2020.
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="stats">
-                        <i class="material-icons">date_range</i> Reported 6 months ago.
+                        <i class="material-icons">date_range</i> Updated August 2020.
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="stats">
-                        <i class="material-icons">update</i> Just Updated.
+                        <i class="material-icons">update</i>  Updated August 2020.
                     </div>
                 </div>
             </div>

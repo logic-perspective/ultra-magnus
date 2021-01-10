@@ -3,7 +3,7 @@
         <div class="col-md-4">
             <div class="card card-chart">
                 <div class="card-header card-header-rose" data-header-animation="true">
-                    <div class="ct-chart" id="websiteViewsChart"></div>
+                    <div class="ct-chart" id="totalArrestsChart"></div>
                 </div>
                 <div class="card-body">
                     <div class="card-actions">
@@ -20,7 +20,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="stats">
-                        <i class="material-icons">access_time</i> last updated 2 days ago
+                        <i class="material-icons">access_time</i> last updated August 2020
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
         <div class="col-md-4">
             <div class="card card-chart">
                 <div class="card-header card-header-success" data-header-animation="true">
-                    <div class="ct-chart" id="dailySalesChart"></div>
+                    <div class="ct-chart" id="totalOffencesChart"></div>
                 </div>
                 <div class="card-body">
                     <div class="card-actions">
@@ -41,11 +41,11 @@
                     </div>
                     <h4 class="card-title">Offences</h4>
                     <p class="card-category">
-                        <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in daily offences.</p>
+                         Total offences committed in 2020.</p>
                 </div>
                 <div class="card-footer">
                     <div class="stats">
-                        <i class="material-icons">access_time</i> updated 4 minutes ago
+                        <i class="material-icons">access_time</i>last updated August 2020
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
         <div class="col-md-4">
             <div class="card card-chart">
                 <div class="card-header card-header-info" data-header-animation="true">
-                    <div class="ct-chart" id="completedTasksChart"></div>
+                    <div class="ct-chart" id="totalDomesticChart"></div>
                 </div>
                 <div class="card-body">
                     <div class="card-actions">
@@ -70,7 +70,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="stats">
-                        <i class="material-icons">access_time</i> last updated 2 days ago
+                        <i class="material-icons">access_time</i> last updated August 2020
                     </div>
                 </div>
             </div>
@@ -80,6 +80,6 @@
 
 <script>
     export default {
-        name: "crime-analysis-plot"
+        name: "crime-analysis-chart",
     }
 </script>

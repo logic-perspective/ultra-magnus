@@ -2068,9 +2068,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/Graph.vue?vue&type=script&lang=js&":
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/Chart.vue?vue&type=script&lang=js&":
 /*!**************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/dashboard/Graph.vue?vue&type=script&lang=js& ***!
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/dashboard/Chart.vue?vue&type=script&lang=js& ***!
   \**************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -2158,7 +2158,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "crime-analysis-plot"
+  name: "crime-analysis-chart"
 });
 
 /***/ }),
@@ -2265,8 +2265,10 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Rank__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Rank */ "./resources/js/components/dashboard/Rank.vue");
-/* harmony import */ var _Graph__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Graph */ "./resources/js/components/dashboard/Graph.vue");
+/* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Chart */ "./resources/js/components/dashboard/Chart.vue");
 /* harmony import */ var _Category__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Category */ "./resources/js/components/dashboard/Category.vue");
+//
+//
 //
 //
 //
@@ -2315,7 +2317,7 @@ __webpack_require__.r(__webpack_exports__);
   name: "dashboard-view",
   components: {
     CrimeCategoryReport: _Category__WEBPACK_IMPORTED_MODULE_2__["default"],
-    CrimeAnalysisPlot: _Graph__WEBPACK_IMPORTED_MODULE_1__["default"],
+    CrimeAnalysisChart: _Chart__WEBPACK_IMPORTED_MODULE_1__["default"],
     CrimeRankedListing: _Rank__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   mounted: function mounted() {
@@ -80169,7 +80171,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "card-footer" }, [
       _c("div", { staticClass: "stats" }, [
         _c("i", { staticClass: "material-icons" }, [_vm._v("local_offer")]),
-        _vm._v(" The is a decrease in property crimes.\n                ")
+        _vm._v("  Updated August 2020.\n                ")
       ])
     ])
   },
@@ -80188,7 +80190,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "card-footer" }, [
       _c("div", { staticClass: "stats" }, [
         _c("i", { staticClass: "material-icons" }, [_vm._v("date_range")]),
-        _vm._v(" Reported 6 months ago.\n                ")
+        _vm._v(" Updated August 2020.\n                ")
       ])
     ])
   },
@@ -80207,7 +80209,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "card-footer" }, [
       _c("div", { staticClass: "stats" }, [
         _c("i", { staticClass: "material-icons" }, [_vm._v("update")]),
-        _vm._v(" Just Updated.\n                ")
+        _vm._v("  Updated August 2020.\n                ")
       ])
     ])
   }
@@ -80218,9 +80220,9 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/Graph.vue?vue&type=template&id=6c5f54f8&":
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/Chart.vue?vue&type=template&id=1094a388&":
 /*!******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/dashboard/Graph.vue?vue&type=template&id=6c5f54f8& ***!
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/dashboard/Chart.vue?vue&type=template&id=1094a388& ***!
   \******************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -80252,7 +80254,7 @@ var staticRenderFns = [
             [
               _c("div", {
                 staticClass: "ct-chart",
-                attrs: { id: "websiteViewsChart" }
+                attrs: { id: "totalArrestsChart" }
               })
             ]
           ),
@@ -80304,7 +80306,7 @@ var staticRenderFns = [
               _c("i", { staticClass: "material-icons" }, [
                 _vm._v("access_time")
               ]),
-              _vm._v(" last updated 2 days ago\n                ")
+              _vm._v(" last updated August 2020\n                ")
             ])
           ])
         ])
@@ -80321,7 +80323,7 @@ var staticRenderFns = [
             [
               _c("div", {
                 staticClass: "ct-chart",
-                attrs: { id: "dailySalesChart" }
+                attrs: { id: "totalOffencesChart" }
               })
             ]
           ),
@@ -80364,11 +80366,7 @@ var staticRenderFns = [
             _c("h4", { staticClass: "card-title" }, [_vm._v("Offences")]),
             _vm._v(" "),
             _c("p", { staticClass: "card-category" }, [
-              _c("span", { staticClass: "text-success" }, [
-                _c("i", { staticClass: "fa fa-long-arrow-up" }),
-                _vm._v(" 55% ")
-              ]),
-              _vm._v(" increase in daily offences.")
+              _vm._v("\n                     Total offences committed in 2020.")
             ])
           ]),
           _vm._v(" "),
@@ -80377,7 +80375,7 @@ var staticRenderFns = [
               _c("i", { staticClass: "material-icons" }, [
                 _vm._v("access_time")
               ]),
-              _vm._v(" updated 4 minutes ago\n                ")
+              _vm._v("last updated August 2020\n                ")
             ])
           ])
         ])
@@ -80394,7 +80392,7 @@ var staticRenderFns = [
             [
               _c("div", {
                 staticClass: "ct-chart",
-                attrs: { id: "completedTasksChart" }
+                attrs: { id: "totalDomesticChart" }
               })
             ]
           ),
@@ -80446,7 +80444,7 @@ var staticRenderFns = [
               _c("i", { staticClass: "material-icons" }, [
                 _vm._v("access_time")
               ]),
-              _vm._v(" last updated 2 days ago\n                ")
+              _vm._v(" last updated August 2020\n                ")
             ])
           ])
         ])
@@ -80604,9 +80602,13 @@ var render = function() {
           [
             _c("crime-ranked-listing"),
             _vm._v(" "),
+            _c("h5", [_vm._v("Crime Reports per Category")]),
+            _vm._v(" "),
             _c("crime-category-report"),
             _vm._v(" "),
-            false ? undefined : _vm._e()
+            _c("h5", [_vm._v("Crime Reports Analysis")]),
+            _vm._v(" "),
+            _c("crime-analysis-chart")
           ],
           1
         )
@@ -80672,7 +80674,12 @@ var staticRenderFns = [
                 _c("div", { staticClass: "input-group no-border pt-3" }, [
                   _c("input", {
                     staticClass: "form-control",
-                    attrs: { type: "text", value: "", placeholder: "Search..." }
+                    attrs: {
+                      type: "text",
+                      value: "",
+                      placeholder: "Search...",
+                      "aria-label": ""
+                    }
                   }),
                   _vm._v(" "),
                   _c(
@@ -80686,7 +80693,7 @@ var staticRenderFns = [
                         _vm._v("search")
                       ]),
                       _vm._v(" "),
-                      _c("div", { staticClass: "ripple-container" })
+                      _c("span", { staticClass: "ripple-container" })
                     ]
                   )
                 ])
@@ -97484,17 +97491,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/dashboard/Graph.vue":
+/***/ "./resources/js/components/dashboard/Chart.vue":
 /*!*****************************************************!*\
-  !*** ./resources/js/components/dashboard/Graph.vue ***!
+  !*** ./resources/js/components/dashboard/Chart.vue ***!
   \*****************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Graph_vue_vue_type_template_id_6c5f54f8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Graph.vue?vue&type=template&id=6c5f54f8& */ "./resources/js/components/dashboard/Graph.vue?vue&type=template&id=6c5f54f8&");
-/* harmony import */ var _Graph_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Graph.vue?vue&type=script&lang=js& */ "./resources/js/components/dashboard/Graph.vue?vue&type=script&lang=js&");
+/* harmony import */ var _Chart_vue_vue_type_template_id_1094a388___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Chart.vue?vue&type=template&id=1094a388& */ "./resources/js/components/dashboard/Chart.vue?vue&type=template&id=1094a388&");
+/* harmony import */ var _Chart_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Chart.vue?vue&type=script&lang=js& */ "./resources/js/components/dashboard/Chart.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -97504,9 +97511,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _Graph_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Graph_vue_vue_type_template_id_6c5f54f8___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Graph_vue_vue_type_template_id_6c5f54f8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _Chart_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Chart_vue_vue_type_template_id_1094a388___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Chart_vue_vue_type_template_id_1094a388___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -97516,38 +97523,38 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/dashboard/Graph.vue"
+component.options.__file = "resources/js/components/dashboard/Chart.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/dashboard/Graph.vue?vue&type=script&lang=js&":
+/***/ "./resources/js/components/dashboard/Chart.vue?vue&type=script&lang=js&":
 /*!******************************************************************************!*\
-  !*** ./resources/js/components/dashboard/Graph.vue?vue&type=script&lang=js& ***!
+  !*** ./resources/js/components/dashboard/Chart.vue?vue&type=script&lang=js& ***!
   \******************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Graph_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Graph.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/Graph.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Graph_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Chart_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Chart.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/Chart.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Chart_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/components/dashboard/Graph.vue?vue&type=template&id=6c5f54f8&":
+/***/ "./resources/js/components/dashboard/Chart.vue?vue&type=template&id=1094a388&":
 /*!************************************************************************************!*\
-  !*** ./resources/js/components/dashboard/Graph.vue?vue&type=template&id=6c5f54f8& ***!
+  !*** ./resources/js/components/dashboard/Chart.vue?vue&type=template&id=1094a388& ***!
   \************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Graph_vue_vue_type_template_id_6c5f54f8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./Graph.vue?vue&type=template&id=6c5f54f8& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/Graph.vue?vue&type=template&id=6c5f54f8&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Graph_vue_vue_type_template_id_6c5f54f8___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Chart_vue_vue_type_template_id_1094a388___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./Chart.vue?vue&type=template&id=1094a388& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/Chart.vue?vue&type=template&id=1094a388&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Chart_vue_vue_type_template_id_1094a388___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Graph_vue_vue_type_template_id_6c5f54f8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Chart_vue_vue_type_template_id_1094a388___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
