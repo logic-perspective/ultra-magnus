@@ -15,10 +15,10 @@
                 <div class="collapse navbar-collapse justify-content-end">
                     <form class="navbar-form">
                         <div class="input-group no-border pt-3">
-                            <input type="text" value="" class="form-control" placeholder="Search...">
+                            <input type="text" value="" class="form-control" placeholder="Search..." aria-label>
                             <button type="submit" class="btn btn-white btn-round btn-just-icon">
                                 <i class="material-icons">search</i>
-                                <div class="ripple-container"></div>
+                                <span class="ripple-container"></span>
                             </button>
                         </div>
                     </form>
@@ -31,7 +31,7 @@
                 <div class="container-fluid p-0">
                     <crime-ranked-listing></crime-ranked-listing>
                     <crime-category-report></crime-category-report>
-                    <crime-analysis-plot v-if="false"></crime-analysis-plot>
+                    <crime-analysis-plot></crime-analysis-plot>
                 </div>
             </div>
         </div>
